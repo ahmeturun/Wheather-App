@@ -310,7 +310,8 @@
         android:layout_below="@+id/degreeLayout"
         android:layout_marginTop="20dp"
         android:id="@+id/genInfo"
-        android:background="@drawable/rounded_corner">
+        android:background="@drawable/rounded_corner"
+        android:padding="5dp">
 
         <TextView
             android:id="@+id/humidText"
