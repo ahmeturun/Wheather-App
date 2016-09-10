@@ -10,7 +10,7 @@ public class Place {
     private String sunrise;
     private String country;
     private String city;
-    private long lastUpdate;
+    private String lastUpdate;
 
     public float getLon() {
         return lon;
@@ -44,11 +44,11 @@ public class Place {
         this.city = city;
     }
 
-    public long getLastUpdate() {
+    public String getLastUpdate() {
         return lastUpdate;
     }
 
-    public void setLastUpdate(long lastUpdate) {
+    public void setLastUpdate(String lastUpdate) {
         this.lastUpdate = lastUpdate;
     }
 

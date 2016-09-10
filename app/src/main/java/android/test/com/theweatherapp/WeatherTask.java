@@ -42,7 +42,9 @@ public class WeatherTask extends AsyncTask<String, Void, Weather> {
         if(weather!=null) {
             String sunriseDate = weather.place.getSunrise();
             String sunsetDate = weather.place.getSunset();
-            String updateDate = df.format(new Date(weather.place.getLastUpdate()));
+
+            String updateDate = convertStringToDate.convertDate(weather.place.getLastUpdate()).toLocaleString();
+
             DecimalFormat decimalFormat = new DecimalFormat("#.#");
             String tempFormat = decimalFormat.format(weather.currentCondition.getTemperature());
             final double tempdouble = weather.currentCondition.getTemperature();
@@ -56,13 +58,13 @@ public class WeatherTask extends AsyncTask<String, Void, Weather> {
             MainActivity.sunset.setText("Sunset: " + sunsetDate);
             MainActivity.updated.setText("Last Updated: " + updateDate);
             MainActivity.description.setText("Condition: " + weather.currentCondition.getCondition() + "(" + weather.currentCondition.getDescription() + ")");
-            MainActivity.textView0.setText(weather.weeklyDates[0]);
-            MainActivity.textView1.setText(weather.weeklyDates[1]);
-            MainActivity.textView2.setText(weather.weeklyDates[2]);
-            MainActivity.textView3.setText(weather.weeklyDates[3]);
-            MainActivity.textView4.setText(weather.weeklyDates[4]);
-            MainActivity.textView5.setText(weather.weeklyDates[5]);
-            MainActivity.textView6.setText(weather.weeklyDates[6]);
+            MainActivity.textView0.setText(convertStringToDate.convertDay(weather.weeklyDates[0]));
+            MainActivity.textView1.setText(convertStringToDate.convertDay(weather.weeklyDates[1]));
+            MainActivity.textView2.setText(convertStringToDate.convertDay(weather.weeklyDates[2]));
+            MainActivity.textView3.setText(convertStringToDate.convertDay(weather.weeklyDates[3]));
+            MainActivity.textView4.setText(convertStringToDate.convertDay(weather.weeklyDates[4]));
+            MainActivity.textView5.setText(convertStringToDate.convertDay(weather.weeklyDates[5]));
+            MainActivity.textView6.setText(convertStringToDate.convertDay(weather.weeklyDates[6]));
 
             new DownloadImageAsyncTask().execute(weather.iconData,weather.weeklyIcons[1],weather.weeklyIcons[2],weather.weeklyIcons[3],weather.weeklyIcons[4],
                     weather.weeklyIcons[5], weather.weeklyIcons[6]);

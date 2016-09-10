@@ -33,7 +33,7 @@ public class JSONWeatherParser {
             place.setLat(Utils.getFloat("lat",locationObj));
             place.setLon(Utils.getFloat("lon",locationObj));
 
-            place.setLastUpdate(Utils.getInt("last_updated_epoch",currentObj));
+            place.setLastUpdate(Utils.getString("last_updated",currentObj));
             place.setSunrise(forecastdayArray.getJSONObject(0).getJSONObject("astro").getString("sunrise"));
             place.setSunset(forecastdayArray.getJSONObject(0).getJSONObject("astro").getString("sunset"));
             place.setCity(Utils.getString("name",locationObj));
