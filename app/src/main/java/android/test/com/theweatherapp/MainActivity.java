@@ -61,7 +61,7 @@ public class MainActivity extends FragmentActivity {
 
 
         //blurrying the background
-        Bitmap myBackgroundFile = BitmapFactory.decodeResource(MainActivity.this.getResources(), R.drawable.aaaa1);
+        Bitmap myBackgroundFile = BitmapFactory.decodeResource(MainActivity.this.getResources(), R.drawable.beach);
         Bitmap blurredBitmap = BlurBuilder.blur(MainActivity.this,myBackgroundFile);
         relativeLayout.setBackgroundDrawable( new BitmapDrawable( getResources(), blurredBitmap ) );
 
