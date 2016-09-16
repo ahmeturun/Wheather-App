@@ -1,5 +1,6 @@
 package android.test.com.theweatherapp;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -17,10 +18,15 @@ import model.Weather;
 //Setting function for getting weather information from the web
 public class WeatherTask extends AsyncTask<String, Void, Weather> {
     Weather weather ;
+    Context context;
+
+    public WeatherTask(Context context) {
+        this.context = context;
+    }
 
     @Override
     protected Weather doInBackground(String... strings) {
-        String data = ( ( new WeatherHttpClient()).getWeatherData(strings[0]));
+        String data = ( ( new WeatherHttpClient(context)).getWeatherData(strings[0]));
 
         weather = JSONWeatherParser.getWeather(data);
         if(weather!=null){
