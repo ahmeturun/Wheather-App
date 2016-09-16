@@ -67,7 +67,6 @@
             android:background="@android:color/transparent"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_below="@+id/weekly_weather_btn"
             android:layout_alignParentStart="true" />
 
         <TextView
@@ -78,6 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/thumbnailIcon"
+            android:layout_below="@+id/cityText"
             android:textColor="@color/light_font"
             android:shadowColor="@color/text_shadow"
             android:shadowDx="1"
@@ -97,7 +97,7 @@
             android:shadowDx="2"
             android:shadowDy="2"
             android:shadowRadius="25"
-            android:layout_above="@+id/tempText"
+            android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/thumbnailIcon" />
     </RelativeLayout>
 
