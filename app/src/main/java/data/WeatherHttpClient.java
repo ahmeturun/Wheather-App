@@ -34,11 +34,11 @@ public class WeatherHttpClient {
 
     public String getWeatherData(String place){
 
-        String getJsonData;
+        final String[] getJsonData = new String[1];
         JsonObjectRequest request = new JsonObjectRequest(Utils.BASE_URL1 + place + Utils.BASE_URL2, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                getJsonData = response.toString();
+                getJsonData[0] = response.toString();
             }
         }, new Response.ErrorListener() {
             @Override
@@ -48,9 +48,9 @@ public class WeatherHttpClient {
         });
 
         SingletonClassVolley.getInstance(context).adToRequestQueue(request);
-        getJsonData =
-        Log.v("json-retrived: ","nothing"+retrieved_Json);
-        return retrieved_Json;
+        Log.v("json-retrived: ","nothing"+getJsonData[0]);
+
+        return getJsonData[0];
 
 //        HttpURLConnection connection = null;
 //        InputStream inputStream = null;
