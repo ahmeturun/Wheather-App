@@ -1,9 +1,8 @@
 package android.test.com.theweatherapp;
 
-import android.icu.text.DateFormat;
-import android.icu.text.SimpleDateFormat;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
@@ -12,7 +11,7 @@ import java.util.Locale;
  */
 public class convertStringToDate {
     public static Date convertDate(String dateToConvert) {
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd kk:mm", Locale.ENGLISH);
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd kk:mm", Locale.ENGLISH);
         Date result=null;
         {
             try {

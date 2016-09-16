@@ -26,10 +26,6 @@ public class WeatherTask extends AsyncTask<String, Void, Weather> {
         if(weather!=null){
             weather.iconData = weather.currentCondition.getIcon();
         }
-        //Log.v("Data: ", weather.currentCondition.getDescription());
-
-        //new DoownloadImageAsyncTask().execute(weather.iconData);
-
         return weather;
     }
 
