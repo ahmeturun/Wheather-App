@@ -1,12 +1,8 @@
 package android.test.com.theweatherapp;
 
 import android.content.Context;
-import android.os.AsyncTask;
-import android.util.Log;
 
-import java.text.DateFormat;
 import java.text.DecimalFormat;
-import java.util.Date;
 
 import data.JSONWeatherParser;
 import data.WeatherHttpClient;
