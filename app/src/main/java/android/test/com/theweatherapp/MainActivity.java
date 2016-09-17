@@ -27,7 +27,7 @@ import model.Weather;
 
 public class MainActivity extends FragmentActivity {
 
-    public static TextView cityName,temp,description,humidity,pressure,wind,sunrise,sunset,updated;
+    public static TextView cityName,temp,description,humidity,pressure,wind,sunrise,sunset,updated,daily_tmpTxt,daily_condTxt,daily_windTxt;
     public static Button weekly_weather_btn;
     public static ImageView iconView,dayone_Img,daytwo_Img,daythree_Img,dayfour_Img,dayfive_Img,daysix_Img,dayseven_Img;
     public static TextView textView0,textView1,textView2,textView3,textView4,textView5,textView6;
@@ -58,6 +58,8 @@ public class MainActivity extends FragmentActivity {
         textView4 = (TextView)findViewById(R.id.textView4);textView5 = (TextView)findViewById(R.id.textView5);
         textView6 = (TextView)findViewById(R.id.textView6);
         change_city_btn = (Button) findViewById(R.id.change_cityId);
+        daily_tmpTxt = (TextView) findViewById(R.id.daily_temp_Txt); daily_condTxt = (TextView) findViewById(R.id.daily_cond_Txt);
+        daily_windTxt = (TextView) findViewById(R.id.daily_wind_Txt);
 
 
         //blurrying the background
@@ -104,6 +106,7 @@ public class MainActivity extends FragmentActivity {
 
                 String newCity = cityPreference.getCity();
                 renderWeatherData(newCity);
+                DailyWeatherInfo(findViewById(R.id.first));
             }
         });
         builder.show();
@@ -112,6 +115,69 @@ public class MainActivity extends FragmentActivity {
     public void weekly_Weather(View v){
         Intent intent = new Intent(getApplicationContext(),Weekly_weather.class);
         startActivity(intent);
+    }
+
+    public void DailyWeatherInfo(View v){
+        int i = 0;
+        findViewById(R.id.first).setBackgroundColor(getResources().getColor(R.color.normal_color));
+        findViewById(R.id.second).setBackgroundColor(getResources().getColor(R.color.normal_color));
+        findViewById(R.id.third).setBackgroundColor(getResources().getColor(R.color.normal_color));
+        findViewById(R.id.fourth).setBackgroundColor(getResources().getColor(R.color.normal_color));
+        findViewById(R.id.fifth).setBackgroundColor(getResources().getColor(R.color.normal_color));
+        findViewById(R.id.sixth).setBackgroundColor(getResources().getColor(R.color.normal_color));
+        findViewById(R.id.seventh).setBackgroundColor(getResources().getColor(R.color.normal_color));
+        switch (v.getId()){
+            case R.id.first:
+                i = 0;
+                daily_tmpTxt.setText("Temp: "+WeatherTask.daily_temp[i]);
+                daily_condTxt.setText(WeatherTask.daily_condition[i]);
+                daily_windTxt.setText("Wind: "+WeatherTask.daily_wind[i]);
+                v.setBackgroundColor(getResources().getColor(R.color.daily_weather_color));
+                break;
+            case R.id.second:
+                i = 1;
+                daily_tmpTxt.setText("Temp: "+WeatherTask.daily_temp[i]);
+                daily_condTxt.setText(WeatherTask.daily_condition[i]);
+                daily_windTxt.setText("Wind: "+WeatherTask.daily_wind[i]);
+                v.setBackground(getResources().getDrawable(R.drawable.top_corners_rounded));
+                v.setBackgroundColor(getResources().getColor(R.color.daily_weather_color));
+                break;
+            case R.id.third:
+                i = 2;
+                daily_tmpTxt.setText("Temp: "+WeatherTask.daily_temp[i]);
+                daily_condTxt.setText(WeatherTask.daily_condition[i]);
+                daily_windTxt.setText("Wind: "+WeatherTask.daily_wind[i]);
+                v.setBackgroundColor(getResources().getColor(R.color.daily_weather_color));
+                break;
+            case R.id.fourth:
+                i = 3;
+                daily_tmpTxt.setText("Temp: "+WeatherTask.daily_temp[i]);
+                daily_condTxt.setText(WeatherTask.daily_condition[i]);
+                daily_windTxt.setText("Wind: "+WeatherTask.daily_wind[i]);
+                v.setBackgroundColor(getResources().getColor(R.color.daily_weather_color));
+                break;
+            case R.id.fifth:
+                i = 4;
+                daily_tmpTxt.setText("Temp: "+WeatherTask.daily_temp[i]);
+                daily_condTxt.setText(WeatherTask.daily_condition[i]);
+                daily_windTxt.setText("Wind: "+WeatherTask.daily_wind[i]);
+                v.setBackgroundColor(getResources().getColor(R.color.daily_weather_color));
+                break;
+            case R.id.sixth:
+                i = 5;
+                daily_tmpTxt.setText("Temp: "+WeatherTask.daily_temp[i]);
+                daily_condTxt.setText(WeatherTask.daily_condition[i]);
+                daily_windTxt.setText("Wind: "+WeatherTask.daily_wind[i]);
+                v.setBackgroundColor(getResources().getColor(R.color.daily_weather_color));
+                break;
+            case R.id.seventh:
+                i = 6;
+                daily_tmpTxt.setText("Temp: "+WeatherTask.daily_temp[i]);
+                daily_condTxt.setText(WeatherTask.daily_condition[i]);
+                daily_windTxt.setText("Wind: "+WeatherTask.daily_wind[i]);
+                v.setBackgroundColor(getResources().getColor(R.color.daily_weather_color));
+                break;
+        }
     }
 
 }

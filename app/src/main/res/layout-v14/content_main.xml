@@ -60,7 +60,8 @@
         android:id="@+id/degreeLayout"
         android:animationCache="false"
         android:background="@drawable/rounded_corner"
-        android:padding="5dp">
+        android:padding="5dp"
+        android:backgroundTint="#8e4ac3c9">
 
         <ImageView
             android:id="@+id/thumbnailIcon"
@@ -109,7 +110,8 @@
         android:layout_marginTop="20dp"
         android:id="@+id/genInfo"
         android:background="@drawable/rounded_corner"
-        android:padding="5dp">
+        android:padding="5dp"
+        android:backgroundTint="#8e4ac3c9">
 
         <TextView
             android:id="@+id/humidText"
@@ -226,7 +228,8 @@
         android:layout_marginTop="20dp"
         android:id="@+id/daily_detail_layout"
         android:background="@drawable/rounded_corner"
-        android:backgroundTint="#10212d">
+        android:backgroundTint="#8e4ac3c9"
+        android:paddingBottom="5dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -270,15 +273,17 @@
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:paddingBottom="1dp"
-            android:backgroundTint="#1d3b50"
+            android:backgroundTint="#a937bedf"
             android:clipToPadding="false"
             android:clipChildren="false">
 
             <RelativeLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:paddingTop="5dp">
+                android:layout_height="fill_parent"
+                android:paddingTop="5dp"
+                android:id="@+id/days_layout"
+                android:animationCache="false">
 
                 <RelativeLayout
                     android:layout_width="80dp"
@@ -286,8 +291,6 @@
                     android:layout_alignParentStart="true"
                     android:id="@+id/first"
                     android:layout_marginLeft="0dp"
-                    android:background="@drawable/top_corners_rounded"
-                    android:backgroundTint="#10212d"
                     android:onClick="DailyWeatherInfo">
 
                     <ImageView
