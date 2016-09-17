@@ -10,4 +10,5 @@
     <color name="transparent">#00ffffff</color>
     <color name="white">#fff</color>
     <color name="best">#234359</color>
+    <color name="daily_weather_color">#10212d</color>
 </resources>

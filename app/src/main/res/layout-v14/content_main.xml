@@ -101,210 +101,6 @@
             android:layout_toRightOf="@+id/thumbnailIcon" />
     </RelativeLayout>
 
-    <HorizontalScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/horizontalScrollView2"
-        android:layout_below="@+id/genInfo"
-        android:layout_alignParentStart="true"
-        android:background="@drawable/rounded_corner"
-        android:layout_marginTop="20dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:paddingBottom="1dp">
-
-        <RelativeLayout
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:paddingTop="5dp">
-
-            <RelativeLayout
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:id="@+id/first"
-                android:layout_marginLeft="0dp">
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:id="@+id/dayone_Img"
-                    android:layout_below="@+id/textView0"
-                    android:layout_centerHorizontal="true"
-                    android:background="@android:color/transparent" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="day one"
-                    android:id="@+id/textView0"
-                    android:textColor="@color/light_font"
-                    android:textAlignment="center" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/first"
-                android:id="@+id/second"
-                android:layout_marginLeft="5dp">
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_below="@+id/textView1"
-                    android:id="@+id/daytwo_Img"
-                    android:layout_centerHorizontal="true"
-                    android:background="@android:color/transparent" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="day two"
-                    android:id="@+id/textView1"
-                    android:textColor="@color/light_font"
-                    android:textAlignment="center" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/second"
-                android:id="@+id/third"
-                android:layout_marginLeft="5dp">
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_below="@+id/textView2"
-                    android:id="@+id/daythree_Img"
-                    android:layout_centerHorizontal="true"
-                    android:background="@android:color/transparent" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="day three"
-                    android:id="@+id/textView2"
-                    android:textColor="@color/light_font"
-                    android:textAlignment="center" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/third"
-                android:id="@+id/fourth"
-                android:layout_marginLeft="5dp">
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_below="@+id/textView3"
-                    android:id="@+id/dayfour_Img"
-                    android:layout_centerHorizontal="true"
-                    android:background="@android:color/transparent" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="day four"
-                    android:id="@+id/textView3"
-                    android:textColor="@color/light_font"
-                    android:textAlignment="center" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/fourth"
-                android:id="@+id/fifth"
-                android:layout_marginLeft="5dp">
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_below="@+id/textView4"
-                    android:id="@+id/dayfive_Img"
-                    android:layout_centerHorizontal="true"
-                    android:background="@android:color/transparent" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="day five"
-                    android:id="@+id/textView4"
-                    android:textColor="@color/light_font"
-                    android:textAlignment="center" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/fifth"
-                android:id="@+id/sixth"
-                android:layout_marginLeft="5dp">
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_below="@+id/textView5"
-                    android:id="@+id/daysix_Img"
-                    android:layout_centerHorizontal="true"
-                    android:background="@android:color/transparent" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="day six"
-                    android:id="@+id/textView5"
-                    android:textColor="@color/light_font"
-                    android:textAlignment="center" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/sixth"
-                android:id="@+id/seventh"
-                android:layout_marginLeft="5dp">
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_below="@+id/textView6"
-                    android:id="@+id/dayseven_Img"
-                    android:layout_centerHorizontal="true"
-                    android:background="@android:color/transparent" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="day seven"
-                    android:id="@+id/textView6"
-                    android:textColor="@color/light_font"
-                    android:textAlignment="center" />
-            </RelativeLayout>
-
-        </RelativeLayout>
-    </HorizontalScrollView>
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -421,14 +217,265 @@
             android:paddingTop="4dp"
             android:paddingLeft="5dp"
             android:paddingBottom="5dp" />
-    </LinearLayout><![CDATA[
+    </LinearLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/genInfo"
+        android:layout_marginTop="20dp"
+        android:id="@+id/daily_detail_layout"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#10212d">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Daily Temp"
+            android:layout_below="@+id/horizontalScrollView2"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:textColor="#FFF"
+            android:id="@+id/daily_temp_Txt" />
 
+        <TextView
+            android:id="@+id/daily_cond_Txt"
+            android:text="Condition:"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/daily_temp_Txt"
+            android:textColor="#FFF"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"/>
 
+        <TextView
+            android:id="@+id/daily_wind_Txt"
+            android:text="Wind:"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/daily_cond_Txt"
+            android:textColor="#FFF"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp" />
 
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/horizontalScrollView2"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/top_corners_rounded"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="1dp"
+            android:backgroundTint="#1d3b50"
+            android:clipToPadding="false"
+            android:clipChildren="false">
 
+            <RelativeLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingTop="5dp">
 
+                <RelativeLayout
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/first"
+                    android:layout_marginLeft="0dp"
+                    android:background="@drawable/top_corners_rounded"
+                    android:backgroundTint="#10212d"
+                    android:onClick="DailyWeatherInfo">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:id="@+id/dayone_Img"
+                        android:layout_below="@+id/textView0"
+                        android:layout_centerHorizontal="true"
+                        android:background="@android:color/transparent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="day one"
+                        android:id="@+id/textView0"
+                        android:textColor="@color/light_font"
+                        android:textAlignment="center" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/first"
+                    android:id="@+id/second"
+                    android:layout_marginLeft="5dp"
+                    android:onClick="DailyWeatherInfo">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_below="@+id/textView1"
+                        android:id="@+id/daytwo_Img"
+                        android:layout_centerHorizontal="true"
+                        android:background="@android:color/transparent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="day two"
+                        android:id="@+id/textView1"
+                        android:textColor="@color/light_font"
+                        android:textAlignment="center" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/second"
+                    android:id="@+id/third"
+                    android:layout_marginLeft="5dp"
+                    android:onClick="DailyWeatherInfo">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_below="@+id/textView2"
+                        android:id="@+id/daythree_Img"
+                        android:layout_centerHorizontal="true"
+                        android:background="@android:color/transparent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="day three"
+                        android:id="@+id/textView2"
+                        android:textColor="@color/light_font"
+                        android:textAlignment="center" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/third"
+                    android:id="@+id/fourth"
+                    android:layout_marginLeft="5dp"
+                    android:onClick="DailyWeatherInfo">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_below="@+id/textView3"
+                        android:id="@+id/dayfour_Img"
+                        android:layout_centerHorizontal="true"
+                        android:background="@android:color/transparent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="day four"
+                        android:id="@+id/textView3"
+                        android:textColor="@color/light_font"
+                        android:textAlignment="center" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/fourth"
+                    android:id="@+id/fifth"
+                    android:layout_marginLeft="5dp"
+                    android:onClick="DailyWeatherInfo">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_below="@+id/textView4"
+                        android:id="@+id/dayfive_Img"
+                        android:layout_centerHorizontal="true"
+                        android:background="@android:color/transparent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="day five"
+                        android:id="@+id/textView4"
+                        android:textColor="@color/light_font"
+                        android:textAlignment="center" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/fifth"
+                    android:id="@+id/sixth"
+                    android:layout_marginLeft="5dp"
+                    android:onClick="DailyWeatherInfo">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_below="@+id/textView5"
+                        android:id="@+id/daysix_Img"
+                        android:layout_centerHorizontal="true"
+                        android:background="@android:color/transparent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="day six"
+                        android:id="@+id/textView5"
+                        android:textColor="@color/light_font"
+                        android:textAlignment="center" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/sixth"
+                    android:id="@+id/seventh"
+                    android:layout_marginLeft="5dp"
+                    android:onClick="DailyWeatherInfo">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_below="@+id/textView6"
+                        android:id="@+id/dayseven_Img"
+                        android:layout_centerHorizontal="true"
+                        android:background="@android:color/transparent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="day seven"
+                        android:id="@+id/textView6"
+                        android:textColor="@color/light_font"
+                        android:textAlignment="center" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </HorizontalScrollView>
+
+    </RelativeLayout><![CDATA[
     />
 
 

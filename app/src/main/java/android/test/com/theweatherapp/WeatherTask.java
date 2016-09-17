@@ -17,6 +17,10 @@ public class WeatherTask {
     Context context;
     String place;
 
+    public static double[] daily_temp;
+    public static String[] daily_condition;
+    public static double[] daily_wind;
+
     public WeatherTask(Context context,String place) {
         this.context = context;
         this.place = place;
@@ -29,6 +33,10 @@ public class WeatherTask {
                 weather = JSONWeatherParser.getWeather(string);
 
                 if(weather!=null) {
+
+                    daily_temp = weather.getWeeklyTemps();
+                    daily_condition = weather.getWeeklyConditions();
+                    daily_wind = weather.getWeeklyWinds();
 
                     String updateDate = convertStringToDate.convertDate(weather.place.getLastUpdate()).toLocaleString();
 

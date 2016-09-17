@@ -10,6 +10,8 @@ public class Weather {
     public double[] weeklyTemps;
     public String[] weeklyIcons;
     public String[] weeklyDates;
+    public double[] weeklyWinds;
+    public String[] weeklyConditions;
     public CurrentCondition currentCondition = new CurrentCondition();
     public Temperature temperature = new Temperature();
     public Wind wind = new Wind();
@@ -38,5 +40,21 @@ public class Weather {
 
     public void setWeeklyDates(String[] weeklyDates) {
         this.weeklyDates = weeklyDates;
+    }
+
+    public double[] getWeeklyWinds() {
+        return weeklyWinds;
+    }
+
+    public void setWeeklyWinds(double[] weeklyWinds) {
+        this.weeklyWinds = weeklyWinds;
+    }
+
+    public String[] getWeeklyConditions() {
+        return weeklyConditions;
+    }
+
+    public void setWeeklyConditions(String[] weeklyConditions) {
+        this.weeklyConditions = weeklyConditions;
     }
 }
