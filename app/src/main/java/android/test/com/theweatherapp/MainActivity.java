@@ -86,8 +86,9 @@ public class MainActivity extends FragmentActivity {
 
     public void renderWeatherData (String city){
 
-        WeatherTask weatherTask = new WeatherTask(this.getApplicationContext());
-        weatherTask.execute(new String[]{city});
+        new WeatherTask(this.getApplicationContext(),city).ParseJsontoMainActivity();
+        //WeatherTask weatherTask = new WeatherTask(this.getApplicationContext(),city);
+        //weatherTask.execute(new String[]{city});
 
     }
 

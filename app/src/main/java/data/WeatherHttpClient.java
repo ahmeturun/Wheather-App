@@ -32,13 +32,12 @@ public class WeatherHttpClient {
         this.context = context;
     }
 
-    public String getWeatherData(String place){
+    public void getWeatherData(String place,final VolleyCallback callback){
 
-        final String[] getJsonData = new String[1];
         JsonObjectRequest request = new JsonObjectRequest(Utils.BASE_URL1 + place + Utils.BASE_URL2, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                getJsonData[0] = response.toString();
+                callback.onSuccess(response.toString());
             }
         }, new Response.ErrorListener() {
             @Override
@@ -48,37 +47,8 @@ public class WeatherHttpClient {
         });
 
         SingletonClassVolley.getInstance(context).adToRequestQueue(request);
-        Log.v("json-retrived: ","nothing"+getJsonData[0]);
-
-        return getJsonData[0];
-
-//        HttpURLConnection connection = null;
-//        InputStream inputStream = null;
-//
-//        try {
-//            connection = (HttpURLConnection) (new URL(Utils.BASE_URL1 + place + Utils.BASE_URL2)).openConnection();
-//            connection.setRequestMethod("GET");
-//            connection.setDoInput(true);
-//            connection.connect();
-//
-//            //Read the response
-//            StringBuffer stringBuffer = new StringBuffer();
-//            inputStream = connection.getInputStream();
-//            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-//            String line = null;
-//
-//            while ((line = bufferedReader.readLine())!= null){
-//                stringBuffer.append(line + "\r\n");
-//            }
-//
-//            inputStream.close();
-//            connection.disconnect();
-//
-//            return  stringBuffer.toString();
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        return null;
+    }
+    public interface VolleyCallback{
+        void onSuccess(String string);
     }
 }

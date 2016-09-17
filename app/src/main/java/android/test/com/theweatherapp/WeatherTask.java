@@ -16,65 +16,54 @@ import model.Weather;
  * Created by ahmet on 8/22/2016.
  */
 //Setting function for getting weather information from the web
-public class WeatherTask extends AsyncTask<String, Void, Weather> {
+public class WeatherTask {
     Weather weather ;
     Context context;
+    String place;
 
-    public WeatherTask(Context context) {
+    public WeatherTask(Context context,String place) {
         this.context = context;
+        this.place = place;
     }
 
-    @Override
-    protected Weather doInBackground(String... strings) {
-        String data = ( ( new WeatherHttpClient(context)).getWeatherData(strings[0]));
+    public void ParseJsontoMainActivity() {
+        new WeatherHttpClient(context).getWeatherData(place, new WeatherHttpClient.VolleyCallback() {
+            @Override
+            public void onSuccess(String string) {
+                weather = JSONWeatherParser.getWeather(string);
 
-        weather = JSONWeatherParser.getWeather(data);
-        if(weather!=null){
-            weather.iconData = weather.currentCondition.getIcon();
-        }
-        return weather;
-    }
+                if(weather!=null) {
 
-    @Override
-    protected void onPostExecute(Weather weather) {
+                    String updateDate = convertStringToDate.convertDate(weather.place.getLastUpdate()).toLocaleString();
 
-        super.onPostExecute(weather);
+                    DecimalFormat decimalFormat = new DecimalFormat("#.#");
+                    String tempFormat = decimalFormat.format(weather.currentCondition.getTemperature());
 
-        DateFormat df = DateFormat.getDateTimeInstance(1,3);
-        if(weather!=null) {
-            String sunriseDate = weather.place.getSunrise();
-            String sunsetDate = weather.place.getSunset();
+                    MainActivity.cityName.setText(weather.place.getCity() + "," + weather.place.getCountry());
+                    MainActivity.temp.setText("" + tempFormat + "°C");
+                    MainActivity.humidity.setText("Humidity: " + weather.currentCondition.getHumidity() + " %");
+                    MainActivity.pressure.setText("Pressure: " + weather.currentCondition.getPressure() + " hPa");
+                    MainActivity.wind.setText("Wind: " + weather.wind.getSpeed() + " mps");
+                    MainActivity.sunrise.setText("Sunrise: " +  weather.place.getSunrise());
+                    MainActivity.sunset.setText("Sunset: " + weather.place.getSunset());
+                    MainActivity.updated.setText("Last Updated: " + updateDate);
+                    MainActivity.description.setText("Condition: " + weather.currentCondition.getCondition() + "(" + weather.currentCondition.getDescription() + ")");
+                    MainActivity.textView0.setText(convertStringToDate.convertDay(weather.weeklyDates[0]));
+                    MainActivity.textView1.setText(convertStringToDate.convertDay(weather.weeklyDates[1]));
+                    MainActivity.textView2.setText(convertStringToDate.convertDay(weather.weeklyDates[2]));
+                    MainActivity.textView3.setText(convertStringToDate.convertDay(weather.weeklyDates[3]));
+                    MainActivity.textView4.setText(convertStringToDate.convertDay(weather.weeklyDates[4]));
+                    MainActivity.textView5.setText(convertStringToDate.convertDay(weather.weeklyDates[5]));
+                    MainActivity.textView6.setText(convertStringToDate.convertDay(weather.weeklyDates[6]));
 
-            String updateDate = convertStringToDate.convertDate(weather.place.getLastUpdate()).toLocaleString();
+                    new DownloadImageAsyncTask().execute(weather.currentCondition.getIcon(),weather.weeklyIcons[1],weather.weeklyIcons[2],weather.weeklyIcons[3],weather.weeklyIcons[4],
+                            weather.weeklyIcons[5], weather.weeklyIcons[6]);
 
-            DecimalFormat decimalFormat = new DecimalFormat("#.#");
-            String tempFormat = decimalFormat.format(weather.currentCondition.getTemperature());
-            final double tempdouble = weather.currentCondition.getTemperature();
+                }
+                else {
 
-            MainActivity.cityName.setText(weather.place.getCity() + "," + weather.place.getCountry());
-            MainActivity.temp.setText("" + tempFormat + "°C");
-            MainActivity.humidity.setText("Humidity: " + weather.currentCondition.getHumidity() + " %");
-            MainActivity.pressure.setText("Pressure: " + weather.currentCondition.getPressure() + " hPa");
-            MainActivity.wind.setText("Wind: " + weather.wind.getSpeed() + " mps");
-            MainActivity.sunrise.setText("Sunrise: " + sunriseDate);
-            MainActivity.sunset.setText("Sunset: " + sunsetDate);
-            MainActivity.updated.setText("Last Updated: " + updateDate);
-            MainActivity.description.setText("Condition: " + weather.currentCondition.getCondition() + "(" + weather.currentCondition.getDescription() + ")");
-            MainActivity.textView0.setText(convertStringToDate.convertDay(weather.weeklyDates[0]));
-            MainActivity.textView1.setText(convertStringToDate.convertDay(weather.weeklyDates[1]));
-            MainActivity.textView2.setText(convertStringToDate.convertDay(weather.weeklyDates[2]));
-            MainActivity.textView3.setText(convertStringToDate.convertDay(weather.weeklyDates[3]));
-            MainActivity.textView4.setText(convertStringToDate.convertDay(weather.weeklyDates[4]));
-            MainActivity.textView5.setText(convertStringToDate.convertDay(weather.weeklyDates[5]));
-            MainActivity.textView6.setText(convertStringToDate.convertDay(weather.weeklyDates[6]));
-
-            new DownloadImageAsyncTask().execute(weather.iconData,weather.weeklyIcons[1],weather.weeklyIcons[2],weather.weeklyIcons[3],weather.weeklyIcons[4],
-                    weather.weeklyIcons[5], weather.weeklyIcons[6]);
-
-            Log.v("iconpathweekly: ",weather.weeklyIcons[0]);
-
-        }
-        else {
-        }
+                }
+            }
+        });
     }
 }
