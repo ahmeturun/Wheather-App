@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#37bedf</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="light_font">#FBFBFB</color>
@@ -9,7 +9,7 @@
     <color name="text_shadow_white">#FFFFFF</color>
     <color name="transparent">#00ffffff</color>
     <color name="white">#fff</color>
-    <color name="best">#234359</color>
+    <color name="best">#37bedf</color>
     <color name="daily_weather_color">#2a8da5</color>
     <color name="normal_color">#37bedf</color>
 </resources>

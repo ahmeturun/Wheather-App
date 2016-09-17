@@ -14,7 +14,7 @@
     tools:context="android.test.com.theweatherapp.MainActivity"
     tools:showIn="@layout/activity_main"
     android:animationCache="false"
-    android:background="#141933">
+    android:background="#1b5e61">
 
     <Button
         android:layout_width="wrap_content"

@@ -63,9 +63,9 @@ public class MainActivity extends FragmentActivity {
 
 
         //blurrying the background
-        Bitmap myBackgroundFile = BitmapFactory.decodeResource(MainActivity.this.getResources(), R.drawable.beach);
-        Bitmap blurredBitmap = BlurBuilder.blur(MainActivity.this,myBackgroundFile);
-        relativeLayout.setBackgroundDrawable( new BitmapDrawable( getResources(), blurredBitmap ) );
+        //Bitmap myBackgroundFile = BitmapFactory.decodeResource(MainActivity.this.getResources(), R.drawable.beach);
+        //Bitmap blurredBitmap = BlurBuilder.blur(MainActivity.this,myBackgroundFile);
+        //relativeLayout.setBackgroundDrawable( new BitmapDrawable( getResources(), blurredBitmap ) );
 
         weekly_weather_btn.setOnClickListener(new View.OnClickListener() {
             @Override
