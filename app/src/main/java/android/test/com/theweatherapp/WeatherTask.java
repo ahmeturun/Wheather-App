@@ -5,7 +5,7 @@ import android.content.Context;
 import java.text.DecimalFormat;
 
 import data.JSONWeatherParser;
-import data.VolleyRequest;
+import data.WeatherHttpClient;
 import model.Weather;
 
 /**
@@ -27,7 +27,7 @@ public class WeatherTask {
     }
 
     public void ParseJsontoMainActivity() {
-        new VolleyRequest(context).getWeatherData(place, new VolleyRequest.VolleyCallback() {
+        new WeatherHttpClient(context).getWeatherData(place, new WeatherHttpClient.VolleyCallback() {
             @Override
             public void onSuccess(String string) {
                 weather = JSONWeatherParser.getWeather(string);
