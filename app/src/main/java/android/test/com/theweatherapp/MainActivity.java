@@ -33,16 +33,14 @@ public class MainActivity extends FragmentActivity {
     public static TextView textView0,textView1,textView2,textView3,textView4,textView5,textView6;
     public static Button change_city_btn;
 
-    Weather weather ;
-
-    private RelativeLayout relativeLayout;
+    private RelativeLayout contentLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        //defining views
         cityName = (TextView) findViewById(R.id.cityText);iconView = (ImageView) findViewById(R.id.thumbnailIcon);
         temp = (TextView) findViewById(R.id.tempText);description = (TextView) findViewById(R.id.cloudText);
         humidity = (TextView) findViewById(R.id.humidText);pressure =(TextView) findViewById(R.id.pressureText);
@@ -52,7 +50,7 @@ public class MainActivity extends FragmentActivity {
         daytwo_Img = (ImageView) findViewById(R.id.daytwo_Img);daythree_Img = (ImageView) findViewById(R.id.daythree_Img);
         dayfour_Img = (ImageView) findViewById(R.id.dayfour_Img);dayfive_Img = (ImageView) findViewById(R.id.dayfive_Img);
         daysix_Img = (ImageView) findViewById(R.id.daysix_Img);dayseven_Img = (ImageView) findViewById(R.id.dayseven_Img);
-        weekly_weather_btn = (Button) findViewById(R.id.weekly_weather_btn);relativeLayout = (RelativeLayout) findViewById(R.id.YOUR_ID);
+        weekly_weather_btn = (Button) findViewById(R.id.weekly_weather_btn);contentLayout = (RelativeLayout) findViewById(R.id.YOUR_ID);
         textView0 = (TextView)findViewById(R.id.textView0);textView1 = (TextView)findViewById(R.id.textView1);
         textView2 = (TextView)findViewById(R.id.textView2);textView3 = (TextView)findViewById(R.id.textView3);
         textView4 = (TextView)findViewById(R.id.textView4);textView5 = (TextView)findViewById(R.id.textView5);
@@ -60,10 +58,10 @@ public class MainActivity extends FragmentActivity {
         change_city_btn = (Button) findViewById(R.id.change_cityId);
 
 
-        //blurrying the background
+        //blurrying the backgrounds
         Bitmap myBackgroundFile = BitmapFactory.decodeResource(MainActivity.this.getResources(), R.drawable.beach);
         Bitmap blurredBitmap = BlurBuilder.blur(MainActivity.this,myBackgroundFile);
-        relativeLayout.setBackgroundDrawable( new BitmapDrawable( getResources(), blurredBitmap ) );
+        contentLayout.setBackgroundDrawable( new BitmapDrawable( getResources(), blurredBitmap ) );
 
         weekly_weather_btn.setOnClickListener(new View.OnClickListener() {
             @Override

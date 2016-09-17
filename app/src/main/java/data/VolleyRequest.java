@@ -13,9 +13,9 @@ import Util.Utils;
 /**
  * Created by ahmet on 8/17/2016.
  */
-public class WeatherHttpClient {
+public class VolleyRequest {
     Context context;
-    public WeatherHttpClient(Context context) {
+    public VolleyRequest(Context context) {
         this.context = context;
     }
 
