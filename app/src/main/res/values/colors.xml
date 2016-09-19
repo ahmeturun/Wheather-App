@@ -10,6 +10,6 @@
     <color name="transparent">#48a08b</color>
     <color name="white">#fff</color>
     <color name="best">#745501</color>
-    <color name="daily_weather_color">#2a8da5</color>
-    <color name="normal_color">#35969a</color>
+    <color name="daily_weather_color">#fdcf01</color>
+    <color name="normal_color">#967b03</color>
 </resources>
