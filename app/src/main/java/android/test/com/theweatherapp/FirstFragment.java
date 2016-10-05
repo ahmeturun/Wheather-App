@@ -25,7 +25,7 @@ import data.CityPreference;
  * Created by ahmet on 9/30/2016.
  */
 
-public class FirstFragment extends Fragment {
+public class FirstFragment extends Fragment{
     public static TextView cityName,temp,description,humidity,pressure,wind,sunrise,sunset,updated,daily_tmpTxt,daily_condTxt,daily_windTxt;
     public static Button weekly_weather_btn;
     public static ImageView iconView,dayone_Img,daytwo_Img,daythree_Img,dayfour_Img,dayfive_Img,daysix_Img,dayseven_Img;
@@ -74,8 +74,49 @@ public class FirstFragment extends Fragment {
         fifth = (RelativeLayout)view.findViewById(R.id.fifth);
         sixth = (RelativeLayout)view.findViewById(R.id.sixth);
         seventh = (RelativeLayout)view.findViewById(R.id.seventh);
+        first.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DailyWeatherInfo(v);
+            }
+        });
+        second.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DailyWeatherInfo(v);
+            }
+        });
+        third.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DailyWeatherInfo(v);
+            }
+        });
+        fourth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DailyWeatherInfo(v);
+            }
+        });
+        fifth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DailyWeatherInfo(v);
+            }
+        });
+        sixth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DailyWeatherInfo(v);
+            }
+        });
+        seventh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DailyWeatherInfo(v);
+            }
+        });
 
-        Log.v("first_fragment: ","in here");
 
         weekly_weather_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,10 +145,10 @@ public class FirstFragment extends Fragment {
     }
 
     private void showInputDialog(final Context context){
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Change City");
 
-        final EditText cityInput= new EditText((getContext()));
+        final EditText cityInput= new EditText(context);
         cityInput.setInputType(InputType.TYPE_CLASS_TEXT);
         cityInput.setHint("Ankara,TR");
         builder.setView(cityInput);
@@ -123,7 +164,7 @@ public class FirstFragment extends Fragment {
                     DailyWeatherInfo(first);
                 }
                 catch (Exception e){
-                    Toast.makeText(getContext(), "Data is Unavailable.(Main)", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Data is Unavailable.(Main)", Toast.LENGTH_SHORT).show();
                     Log.v("exception on main: ",e.toString());
                 }
             }
@@ -198,5 +239,4 @@ public class FirstFragment extends Fragment {
                 break;
         }
     }
-
 }
