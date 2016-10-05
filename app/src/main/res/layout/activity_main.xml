@@ -10,12 +10,6 @@
     tools:context="android.test.com.theweatherapp.MainActivity">
 
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/tabLayout"/>
-
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,6 +17,19 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="android.test.com.theweatherapp.FirstFragment"
+        android:id="@+id/fragment"
+        tools:layout="@layout/first_fragment_layout" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tabLayout"/>
+
+    <!--<include layout="@layout/content_main" />-->
 
 </android.support.design.widget.CoordinatorLayout>

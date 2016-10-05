@@ -1,6 +1,8 @@
 package android.test.com.theweatherapp;
 
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -44,24 +46,12 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        FirstFragment firstFragment = new FirstFragment();
+        FragmentManager manager = getFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.add(R.id.container, firstFragment, "FirstFragment");
+        transaction.commit();
 
-        cityName = (TextView) findViewById(R.id.cityText);iconView = (ImageView) findViewById(R.id.thumbnailIcon);
-        temp = (TextView) findViewById(R.id.tempText);description = (TextView) findViewById(R.id.cloudText);
-        humidity = (TextView) findViewById(R.id.humidText);pressure =(TextView) findViewById(R.id.pressureText);
-        wind = (TextView) findViewById(R.id.windText);sunrise = (TextView)findViewById(R.id.riseText);
-        sunset = (TextView)findViewById(R.id.setText);updated = (TextView) findViewById(R.id.updateText);
-        dayone_Img = (ImageView) findViewById(R.id.dayone_Img);
-        daytwo_Img = (ImageView) findViewById(R.id.daytwo_Img);daythree_Img = (ImageView) findViewById(R.id.daythree_Img);
-        dayfour_Img = (ImageView) findViewById(R.id.dayfour_Img);dayfive_Img = (ImageView) findViewById(R.id.dayfive_Img);
-        daysix_Img = (ImageView) findViewById(R.id.daysix_Img);dayseven_Img = (ImageView) findViewById(R.id.dayseven_Img);
-        weekly_weather_btn = (Button) findViewById(R.id.weekly_weather_btn);relativeLayout = (RelativeLayout) findViewById(R.id.YOUR_ID);
-        textView0 = (TextView)findViewById(R.id.textView0);textView1 = (TextView)findViewById(R.id.textView1);
-        textView2 = (TextView)findViewById(R.id.textView2);textView3 = (TextView)findViewById(R.id.textView3);
-        textView4 = (TextView)findViewById(R.id.textView4);textView5 = (TextView)findViewById(R.id.textView5);
-        textView6 = (TextView)findViewById(R.id.textView6);
-        change_city_btn = (Button) findViewById(R.id.change_cityId);
-        daily_tmpTxt = (TextView) findViewById(R.id.daily_temp_Txt); daily_condTxt = (TextView) findViewById(R.id.daily_cond_Txt);
-        daily_windTxt = (TextView) findViewById(R.id.daily_wind_Txt);
 
 
         //blurrying the background
@@ -69,123 +59,5 @@ public class MainActivity extends FragmentActivity {
         //Bitmap blurredBitmap = BlurBuilder.blur(MainActivity.this,myBackgroundFile);
         //relativeLayout.setBackgroundDrawable( new BitmapDrawable( getResources(), blurredBitmap ) );
 
-        weekly_weather_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,Weekly_weather.class));
-            }
-        });
-        change_city_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showInputDialog();
-            }
-        });
-
-        CityPreference cityPreference = new CityPreference(MainActivity.this);
-
-        renderWeatherData(cityPreference.getCity());
-
     }
-
-    public void renderWeatherData (String city){
-        new WeatherTask(this.getApplicationContext(),city).ParseJsontoMainActivity();
-    }
-
-    private void showInputDialog(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle("Change City");
-
-        final EditText cityInput= new EditText((MainActivity.this));
-        cityInput.setInputType(InputType.TYPE_CLASS_TEXT);
-        cityInput.setHint("Ankara,TR");
-        builder.setView(cityInput);
-        builder.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                CityPreference cityPreference = new CityPreference((MainActivity.this));
-                cityPreference.setCity(cityInput.getText().toString());
-
-                String newCity = cityPreference.getCity();
-                try {
-                    renderWeatherData(newCity);
-                    DailyWeatherInfo(findViewById(R.id.first));
-                }
-                catch (Exception e){
-                    Toast.makeText(MainActivity.this, "Data is Unavailable.(Main)", Toast.LENGTH_SHORT).show();
-                    Log.v("exception on main: ",e.toString());
-                }
-            }
-        });
-        builder.show();
-    }
-
-    public void weekly_Weather(View v){
-        Intent intent = new Intent(getApplicationContext(),Weekly_weather.class);
-        startActivity(intent);
-    }
-
-    public void DailyWeatherInfo(View v){
-        int i = 0;
-        findViewById(R.id.first).setBackgroundColor(getResources().getColor(R.color.normal_color));
-        findViewById(R.id.second).setBackgroundColor(getResources().getColor(R.color.normal_color));
-        findViewById(R.id.third).setBackgroundColor(getResources().getColor(R.color.normal_color));
-        findViewById(R.id.fourth).setBackgroundColor(getResources().getColor(R.color.normal_color));
-        findViewById(R.id.fifth).setBackgroundColor(getResources().getColor(R.color.normal_color));
-        findViewById(R.id.sixth).setBackgroundColor(getResources().getColor(R.color.normal_color));
-        findViewById(R.id.seventh).setBackgroundColor(getResources().getColor(R.color.normal_color));
-        switch (v.getId()){
-            case R.id.first:
-                i = 0;
-                daily_tmpTxt.setText("Temp: "+WeatherTask.daily_temp[i]);
-                daily_condTxt.setText(WeatherTask.daily_condition[i]);
-                daily_windTxt.setText("Wind: "+WeatherTask.daily_wind[i]);
-                v.setBackgroundColor(getResources().getColor(R.color.daily_weather_color));
-                break;
-            case R.id.second:
-                i = 1;
-                daily_tmpTxt.setText("Temp: "+WeatherTask.daily_temp[i]);
-                daily_condTxt.setText(WeatherTask.daily_condition[i]);
-                daily_windTxt.setText("Wind: "+WeatherTask.daily_wind[i]);
-                v.setBackground(getResources().getDrawable(R.drawable.top_corners_rounded));
-                v.setBackgroundColor(getResources().getColor(R.color.daily_weather_color));
-                break;
-            case R.id.third:
-                i = 2;
-                daily_tmpTxt.setText("Temp: "+WeatherTask.daily_temp[i]);
-                daily_condTxt.setText(WeatherTask.daily_condition[i]);
-                daily_windTxt.setText("Wind: "+WeatherTask.daily_wind[i]);
-                v.setBackgroundColor(getResources().getColor(R.color.daily_weather_color));
-                break;
-            case R.id.fourth:
-                i = 3;
-                daily_tmpTxt.setText("Temp: "+WeatherTask.daily_temp[i]);
-                daily_condTxt.setText(WeatherTask.daily_condition[i]);
-                daily_windTxt.setText("Wind: "+WeatherTask.daily_wind[i]);
-                v.setBackgroundColor(getResources().getColor(R.color.daily_weather_color));
-                break;
-            case R.id.fifth:
-                i = 4;
-                daily_tmpTxt.setText("Temp: "+WeatherTask.daily_temp[i]);
-                daily_condTxt.setText(WeatherTask.daily_condition[i]);
-                daily_windTxt.setText("Wind: "+WeatherTask.daily_wind[i]);
-                v.setBackgroundColor(getResources().getColor(R.color.daily_weather_color));
-                break;
-            case R.id.sixth:
-                i = 5;
-                daily_tmpTxt.setText("Temp: "+WeatherTask.daily_temp[i]);
-                daily_condTxt.setText(WeatherTask.daily_condition[i]);
-                daily_windTxt.setText("Wind: "+WeatherTask.daily_wind[i]);
-                v.setBackgroundColor(getResources().getColor(R.color.daily_weather_color));
-                break;
-            case R.id.seventh:
-                i = 6;
-                daily_tmpTxt.setText("Temp: "+WeatherTask.daily_temp[i]);
-                daily_condTxt.setText(WeatherTask.daily_condition[i]);
-                daily_windTxt.setText("Wind: "+WeatherTask.daily_wind[i]);
-                v.setBackgroundColor(getResources().getColor(R.color.daily_weather_color));
-                break;
-        }
-    }
-
 }

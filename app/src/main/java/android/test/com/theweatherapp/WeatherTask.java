@@ -1,6 +1,7 @@
 package android.test.com.theweatherapp;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.text.DecimalFormat;
 
@@ -43,22 +44,24 @@ public class WeatherTask {
                     DecimalFormat decimalFormat = new DecimalFormat("#.#");
                     String tempFormat = decimalFormat.format(weather.currentCondition.getTemperature());
 
-                    MainActivity.cityName.setText(weather.place.getCity() + "," + weather.place.getCountry());
-                    MainActivity.temp.setText("" + tempFormat + "°C");
-                    MainActivity.humidity.setText("Humidity: " + weather.currentCondition.getHumidity() + " %");
-                    MainActivity.pressure.setText("Pressure: " + weather.currentCondition.getPressure() + " hPa");
-                    MainActivity.wind.setText("Wind: " + weather.wind.getSpeed() + " mps");
-                    MainActivity.sunrise.setText("Sunrise: " +  weather.place.getSunrise());
-                    MainActivity.sunset.setText("Sunset: " + weather.place.getSunset());
-                    MainActivity.updated.setText("Last Updated: " + updateDate);
-                    MainActivity.description.setText("Condition: " + weather.currentCondition.getCondition() + "(" + weather.currentCondition.getDescription() + ")");
-                    MainActivity.textView0.setText(convertStringToDate.convertDay(weather.weeklyDates[0]));
-                    MainActivity.textView1.setText(convertStringToDate.convertDay(weather.weeklyDates[1]));
-                    MainActivity.textView2.setText(convertStringToDate.convertDay(weather.weeklyDates[2]));
-                    MainActivity.textView3.setText(convertStringToDate.convertDay(weather.weeklyDates[3]));
-                    MainActivity.textView4.setText(convertStringToDate.convertDay(weather.weeklyDates[4]));
-                    MainActivity.textView5.setText(convertStringToDate.convertDay(weather.weeklyDates[5]));
-                    MainActivity.textView6.setText(convertStringToDate.convertDay(weather.weeklyDates[6]));
+                    FirstFragment.cityName.setText(weather.place.getCity() + "," + weather.place.getCountry());
+                    FirstFragment.temp.setText("" + tempFormat + "°C");
+                    FirstFragment.humidity.setText("Humidity: " + weather.currentCondition.getHumidity() + " %");
+                    FirstFragment.pressure.setText("Pressure: " + weather.currentCondition.getPressure() + " hPa");
+                    FirstFragment.wind.setText("Wind: " + weather.wind.getSpeed() + " mps");
+                    FirstFragment.sunrise.setText("Sunrise: " +  weather.place.getSunrise());
+                    FirstFragment.sunset.setText("Sunset: " + weather.place.getSunset());
+                    FirstFragment.updated.setText("Last Updated: " + updateDate);
+                    FirstFragment.description.setText("Condition: " + weather.currentCondition.getCondition() + "");
+                    FirstFragment.textView0.setText(convertStringToDate.convertDay(weather.weeklyDates[0]));
+                    FirstFragment.textView1.setText(convertStringToDate.convertDay(weather.weeklyDates[1]));
+                    FirstFragment.textView2.setText(convertStringToDate.convertDay(weather.weeklyDates[2]));
+                    FirstFragment.textView3.setText(convertStringToDate.convertDay(weather.weeklyDates[3]));
+                    FirstFragment.textView4.setText(convertStringToDate.convertDay(weather.weeklyDates[4]));
+                    FirstFragment.textView5.setText(convertStringToDate.convertDay(weather.weeklyDates[5]));
+                    FirstFragment.textView6.setText(convertStringToDate.convertDay(weather.weeklyDates[6]));
+
+                    Log.v("weathertask_fragment: ",FirstFragment.cityName.getText().toString());
 
                     new DownloadImageAsyncTask().execute(weather.currentCondition.getIcon(),weather.weeklyIcons[1],weather.weeklyIcons[2],weather.weeklyIcons[3],weather.weeklyIcons[4],
                             weather.weeklyIcons[5], weather.weeklyIcons[6]);

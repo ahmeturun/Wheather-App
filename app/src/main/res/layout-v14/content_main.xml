@@ -303,8 +303,7 @@
                     android:id="@+id/first"
                     android:layout_marginLeft="0dp"
                     android:onClick="DailyWeatherInfo"
-                    android:background="@color/normal_color"
-                    android:backgroundTint="@color/normal_color">
+                    android:background="@color/normal_color">
 
                     <ImageView
                         android:layout_width="70dp"
@@ -333,8 +332,7 @@
                     android:id="@+id/second"
                     android:layout_marginLeft="5dp"
                     android:onClick="DailyWeatherInfo"
-                    android:background="@color/normal_color"
-                    android:backgroundTint="@color/normal_color">
+                    android:background="@color/normal_color">
 
                     <ImageView
                         android:layout_width="70dp"
@@ -362,8 +360,7 @@
                     android:id="@+id/third"
                     android:layout_marginLeft="5dp"
                     android:onClick="DailyWeatherInfo"
-                    android:background="@color/normal_color"
-                    android:backgroundTint="@color/normal_color">
+                    android:background="@color/normal_color">
 
                     <ImageView
                         android:layout_width="70dp"
@@ -391,8 +388,7 @@
                     android:id="@+id/fourth"
                     android:layout_marginLeft="5dp"
                     android:onClick="DailyWeatherInfo"
-                    android:background="@color/normal_color"
-                    android:backgroundTint="@color/normal_color">
+                    android:background="@color/normal_color">
 
                     <ImageView
                         android:layout_width="70dp"
@@ -420,8 +416,7 @@
                     android:id="@+id/fifth"
                     android:layout_marginLeft="5dp"
                     android:onClick="DailyWeatherInfo"
-                    android:background="@color/normal_color"
-                    android:backgroundTint="@color/normal_color">
+                    android:background="@color/normal_color">
 
                     <ImageView
                         android:layout_width="70dp"
@@ -449,8 +444,7 @@
                     android:id="@+id/sixth"
                     android:layout_marginLeft="5dp"
                     android:onClick="DailyWeatherInfo"
-                    android:background="@color/normal_color"
-                    android:backgroundTint="@color/normal_color">
+                    android:background="@color/normal_color">
 
                     <ImageView
                         android:layout_width="70dp"
@@ -478,8 +472,7 @@
                     android:id="@+id/seventh"
                     android:layout_marginLeft="5dp"
                     android:onClick="DailyWeatherInfo"
-                    android:background="@color/normal_color"
-                    android:backgroundTint="@color/normal_color">
+                    android:background="@color/normal_color">
 
                     <ImageView
                         android:layout_width="70dp"

@@ -19,14 +19,14 @@ public class DownloadImageAsyncTask extends AsyncTask<String,Void,Bitmap[]> {
     //setting the weather image after the doInBackground execution finished
     @Override
     protected void onPostExecute(Bitmap[] bitmap) {
-        MainActivity.iconView.setImageBitmap(bitmap[0]);
-        MainActivity.dayone_Img.setImageBitmap(bitmap[0]);
-        MainActivity.daytwo_Img.setImageBitmap(bitmap[1]);
-        MainActivity.daythree_Img.setImageBitmap(bitmap[2]);
-        MainActivity.dayfour_Img.setImageBitmap(bitmap[3]);
-        MainActivity.dayfive_Img.setImageBitmap(bitmap[4]);
-        MainActivity.daysix_Img.setImageBitmap(bitmap[5]);
-        MainActivity.dayseven_Img.setImageBitmap(bitmap[6]);
+        FirstFragment.iconView.setImageBitmap(bitmap[0]);
+        FirstFragment.dayone_Img.setImageBitmap(bitmap[0]);
+        FirstFragment.daytwo_Img.setImageBitmap(bitmap[1]);
+        FirstFragment.daythree_Img.setImageBitmap(bitmap[2]);
+        FirstFragment.dayfour_Img.setImageBitmap(bitmap[3]);
+        FirstFragment.dayfive_Img.setImageBitmap(bitmap[4]);
+        FirstFragment.daysix_Img.setImageBitmap(bitmap[5]);
+        FirstFragment.dayseven_Img.setImageBitmap(bitmap[6]);
         //super.onPostExecute(bitmap);
     }
 
